@@ -4,13 +4,13 @@ In this work, we propose two classifiers in order to select a suitable retrieval
 
 ## Sparse vs Dense
 
-###Train
+###### Train
 
-###Test
+###### Test
 
 ## Sparse vs Hybrid
 
-###Train
+###### Train
 
-###Test
+###### Test
 
