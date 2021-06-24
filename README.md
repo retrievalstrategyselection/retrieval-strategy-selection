@@ -18,7 +18,7 @@ If you are not willing to train the model, you can [download the trained sparse 
 we test our trained sparse vs dense classifier on MSMARCO small dev set queriees (```queries.dev.small.tsv```). Run ```test_sparse_vs_dense.py``` and the trained model can be changed under ```model_name```. The results should be saved under ```results``` repository as ```prediction_sparse_vs_dense.dev.small.tsv``` in the following format:
 ```qid<\t>query<\t>sparse_prob<\t>dense_prob```
 Based on the sparse vs dense classifier prediction, the query should be retrieved by the retriever with higher probability.
-In addition, if you are willing to rank queries based on their probability of being assigned to sparse retriever, you can set ```num_labels=1``` when training and testing. As a result, for each query, you will get probability of success when retrieviing with dense retriever, you can rank them on descending order to rank queeires based on how good they can be retrieve with sparse retriever. 
+
 
 ## Sparse vs Hybrid
 
@@ -39,3 +39,5 @@ we test our trained sparse vs dense classifier on MSMARCO small dev set queriees
 ```qid<\t>query<\t>sparse_prob<\t>hybrid_prob```
 Based on the sparse vs hybrid classifier prediction, the query should be retrieved by the retriever with higher probability.
 
+
+It should be noted that in both clasifiers, if you are willing to rank queries based on their probability of being assigned to sparse retriever, you can set ```num_labels=1``` when training and testing. As a result, for each query, you will get probability of success when retrieviing with dense retriever, you can rank them on descending order to rank queeires based on how good they can be retrieve with sparse retriever. 
