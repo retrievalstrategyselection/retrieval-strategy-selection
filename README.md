@@ -20,7 +20,7 @@ Run ```train_sparse_vs_dense.py``` to train a cross-encoder model with ```bert-b
 *  ```batch_size``` : batch size for training
 
 Training should take less than 1 hour on RTX2080 GPU.
-If you are not willing to train the model, you can [download the trained sparse vs dense model from here]()
+If you are not willing to train the model, you can [download the trained sparse vs dense model from here](https://drive.google.com/drive/folders/1ThWLQ7czP1UgXFLy174D-ua6RyL-YxGD?usp=sharing)
 ###### Test
 we test our trained sparse vs dense classifier on MSMARCO small dev set queriees (```queries.dev.small.tsv```). Run ```test_sparse_vs_dense.py``` and the trained model can be changed under ```model_name```. The results should be saved under ```results``` repository as ```prediction_sparse_vs_dense.dev.small.tsv``` in the following format:
 ```qid<\t>query<\t>sparse_prob<\t>dense_prob```
