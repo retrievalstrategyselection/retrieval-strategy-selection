@@ -16,7 +16,7 @@ for line in qfile:
 scores=model.predict(sentences)
 
 
-out=open('results/prediction_'+model_name+'.tsv','w')
+out=open('results/prediction_'+model_name+'.dev.small.tsv','w')
 for i in range(len(sentences)):
     out.write(queries[i]+'\t'+sentences[i][0]+'\t'+str(scores[i])+'\n')
 out.close()
