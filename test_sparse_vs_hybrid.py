@@ -9,15 +9,15 @@ queries=[]
 
 qfile=open('queries+firstdoc.small.dev.tsv','r').readlines()
 for line in qfile:
-    qid,qtext,doctext,label=line.rstrip().split('\t')
+    qid,qtext,doctext=line.rstrip().split('\t')
     sentences.append([qtext,doctext])
     queries.append(qid)
 
 scores=model.predict(sentences)
 
 
-out=open('results/prediction_'+model_name,'w')
+out=open('results/prediction_'+model_name+'.tsv','w')
 for i in range(len(sentences)):
-    predicted.append(float(scores[i]))
-    out.write(queries[i]+'\t'+sentences[i][0]+'\t'+str(predicted[i])+'\n')
+    out.write(queries[i]+'\t'+sentences[i][0]+'\t'+str(scores[i])+'\n')
 out.close()
+
