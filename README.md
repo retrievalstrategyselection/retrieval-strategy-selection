@@ -46,6 +46,6 @@ we test our trained sparse vs dense classifier on MSMARCO small dev set queries 
 ```qid<\t>query<\t>sparse_prob<\t>hybrid_prob```
 Based on the sparse vs hybrid classifier prediction, the query should be retrieved by the retriever with higher probability.
 
-## Train and Test with 1 label
+## Number of labels
 It should be noted that in both clasifiers, if you are willing to rank queries based on their probability of being assigned to sparse retriever, you can set ```num_labels=1``` when training and testing. As a result, for each query, you will get only one probability of success when retrieviing with dense retriever, you can rank them on descending order to rank queeires based on how good they can be retrieve with sparse retriever. 
 
