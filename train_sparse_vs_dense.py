@@ -10,7 +10,7 @@ train_set=[]
 
 labels=open('train_labels_sparse_vs_dense_T50.tsv','r').readlines()
 for line in labels:
-    qtext,label=line.rstrip().split('\t')
+    qid,qtext,doctext,label=line.rstrip().split('\t')
     train_set.append( InputExample(texts=[qtext],label=int(label) ))
 
 print(len(train_set))
