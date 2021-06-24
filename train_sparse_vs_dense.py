@@ -37,4 +37,4 @@ model.fit(train_dataloader=train_dataloader,
           output_path="models/sparse_vs_dense_"+model_name+"_e"+str(epoch_num)+'_b'+str(batch_size))
 
 
-model.save("models/sparse_vs_dense_"+model_name+"_"+str(epoch_num)+'_b'+str(batch_size))
+model.save("models/sparse_vs_dense_"+model_name+"_e"+str(epoch_num)+'_b'+str(batch_size))
