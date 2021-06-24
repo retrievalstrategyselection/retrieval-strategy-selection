@@ -13,7 +13,9 @@ Further, ```train_sparse_vs_dense.py``` will train a cross-encoder model with ``
 *  ```batch_size``` : batch size for training
 
 ###### Test
-we test our trained sparse vs dense classifier on MSMARCO small dev set queriees (```queries.dev.small.tsv```). Run ```test_sparse_vs_dense.py``` and the trained model can be changed under ```model_name```. The results should be saved under ```results``` repository as ```prediction_sparse_vs_dense.dev.small.tsv``` 
+we test our trained sparse vs dense classifier on MSMARCO small dev set queriees (```queries.dev.small.tsv```). Run ```test_sparse_vs_dense.py``` and the trained model can be changed under ```model_name```. The results should be saved under ```results``` repository as ```prediction_sparse_vs_dense.dev.small.tsv``` in the following format:
+```qid<\t>query<\t>sparse_prob<\t>dense_prob```
+Based on the sparse vs dense classifier prediction, the query should be retrieved by the retriever with higher probability.
 
 ## Sparse vs Hybrid
 
