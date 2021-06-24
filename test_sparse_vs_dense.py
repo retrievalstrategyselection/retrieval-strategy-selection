@@ -4,8 +4,6 @@ import pickle
 from sentence_transformers.cross_encoder import CrossEncoder
 from sentence_transformers.cross_encoder.evaluation import CECorrelationEvaluator
 import math,logging
-#### Just some code to print debug information to stdout
-
 
 batch_size=32
 
