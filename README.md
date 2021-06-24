@@ -39,7 +39,7 @@ Run ``````train_sparse_vs_hybrid.py``````  and the following parameter can be ch
 *  ```epoch_num``` : number of epochs
 *  ```batch_size``` : batch size for training
 The model will be saved under ```models``` directory. e.g., ```sparse_vs_hybrid_model_berrt-based-uncased_e1_b32```
-If you are not willing to train the model, you can [download the trained sparse vs hybrid model from here]()
+If you are not willing to train the model, you can [download the trained sparse vs hybrid model from here](https://drive.google.com/drive/folders/1e-Gj23_84FsBEiA0V_oxCuvp0apOdH69?usp=sharing)
 
 ###### Test
 we test our trained sparse vs dense classifier on MSMARCO small dev set queries and their first retrieved documents by bm25  (```queries+firstdoc.small.dev.tsv```). Run ```test_sparse_vs_hybrid.py``` and the trained model can be changed under ```model_name```. The results should be saved under ```results``` repository as ```prediction_sparse_vs_hybrid.dev.small.tsv``` in the following format:
