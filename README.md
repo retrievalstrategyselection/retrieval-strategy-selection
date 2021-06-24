@@ -11,7 +11,7 @@ Further, ```train_sparse_vs_dense.py``` will train a cross-encoder model with ``
 *  ```model_name``` : The initial pretrained model can be changed undervariable
 *  ```epoch_num``` : number of epochs
 *  ```batch_size``` : batch size for training
-* 
+
 ###### Test
 
 ## Sparse vs Hybrid
