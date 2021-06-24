@@ -14,8 +14,8 @@ model = CrossEncoder('models/'+model_name, num_labels=2)
 sentences = []
 qs=[]
 
-labels=open('queries.dev.small.tsv','r').readlines()
-for line in labels:
+qfile=open('queries.dev.small.tsv','r').readlines()
+for line in qfile:
     qid,qtext=line.rstrip().split('\t')
     sentences.append([qtext])
     qs.append(qid)
