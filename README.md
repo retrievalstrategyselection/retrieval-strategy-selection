@@ -14,12 +14,12 @@ The labeling file is formatted as follows:
 ###### Train
 
 
-Further, ```train_sparse_vs_dense.py``` will train a cross-encoder model with ```bert-base-uncased``` and save it under ```models``` directory. The following parameter can be changed for the training  in ```train_sparse_vs_dense.py```.:
+Run ```train_sparse_vs_dense.py``` to train a cross-encoder model with ```bert-base-uncased``` and save it under ```models``` directory. The following parameter can be changed for the training  in ```train_sparse_vs_dense.py```.:
 *  ```model_name``` : The initial pretrained model can be changed undervariable
 *  ```epoch_num``` : number of epochs
 *  ```batch_size``` : batch size for training
 
-Training hould take less than 1 hour on RTX2080 GPU.
+Training should take less than 1 hour on RTX2080 GPU.
 If you are not willing to train the model, you can [download the trained sparse vs dense model from here]()
 ###### Test
 we test our trained sparse vs dense classifier on MSMARCO small dev set queriees (```queries.dev.small.tsv```). Run ```test_sparse_vs_dense.py``` and the trained model can be changed under ```model_name```. The results should be saved under ```results``` repository as ```prediction_sparse_vs_dense.dev.small.tsv``` in the following format:
