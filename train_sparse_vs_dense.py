@@ -16,11 +16,7 @@ for line in labels:
 print(len(train_set))
 
 batch_size=32
-# We wrap train_samples (which is a List[InputExample]) into a pytorch DataLoader
 train_dataloader = DataLoader(train_set, shuffle=True, batch_size=batch_size)
-
-
-# We add an evaluator, which evaluates the performance during training
 
 epoch_num=2
 
