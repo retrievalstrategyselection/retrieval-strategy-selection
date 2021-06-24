@@ -30,11 +30,11 @@ Based on the sparse vs dense classifier prediction, the query should be retrieve
 ## Sparse vs Hybrid
 
 ###### Train
-Training the sparse vs hybrid classifier is similar to sparse vs dense classifier, however, since in this seeting, we would retrieve with sparse retriever anyway, we would like to utilie another piece of information i.e., retrieved documents by sparse retrievers. Therefore, we train a similar cross encoder by using queries as well as first retrieved documents by sparse retrievers. The labeling schema and training setting is the same.
+Training the sparse vs hybrid classifier is similar to sparse vs dense classifier. However, since in this setting,we would first retrieve with sparse retriever and then will merge the pool of retrieved documents by sparse retrieved with dense retrieved if necessary, we utilize another piece of information i.e., retrieved documents by sparse retrievers. Therefore, we train a similar cross encoder by using queries as well as first retrieved documents by the sparse retriever. The labeling schema and training setting is the same.
 
-Train label for sparse vs hybrid includes the query, first retreievd docuent , and the label, in ```train_label_sparse_vs_hybrid_T50.tsv```
+Train label file , ```train_label_sparse_vs_hybrid_T50.tsv``` for sparse vs hybrid includes the query, first retreievd docuent , and the labels. 
 
-Further, run ``````train_sparse_vs_hybrid.py``````  and the following parameter can be changed for the training  in ```train_sparse_vs_dense.py```.:
+Run ``````train_sparse_vs_hybrid.py``````  and the following parameter can be changed for the training :
 *  ```model_name``` : The initial pretrained model can be changed undervariable e.e., ```bert-based-uncased```
 *  ```epoch_num``` : number of epochs
 *  ```batch_size``` : batch size for training
@@ -42,9 +42,10 @@ The model will be saved under ```models``` directory. e.g., ```sparse_vs_hybrid_
 If you are not willing to train the model, you can [download the trained sparse vs hybrid model from here]()
 
 ###### Test
-we test our trained sparse vs dense classifier on MSMARCO small dev set queriees adn theri first retrieved documents by bm25  (```queries+firstdoc.small.dev.tsv```). Run ```test_sparse_vs_hybrid.py``` and the trained model can be changed under ```model_name```. The results should be saved under ```results``` repository as ```prediction_sparse_vs_hybrid.dev.small.tsv``` in the following format:
+we test our trained sparse vs dense classifier on MSMARCO small dev set queries and their first retrieved documents by bm25  (```queries+firstdoc.small.dev.tsv```). Run ```test_sparse_vs_hybrid.py``` and the trained model can be changed under ```model_name```. The results should be saved under ```results``` repository as ```prediction_sparse_vs_hybrid.dev.small.tsv``` in the following format:
 ```qid<\t>query<\t>sparse_prob<\t>hybrid_prob```
 Based on the sparse vs hybrid classifier prediction, the query should be retrieved by the retriever with higher probability.
 
+## Train and Test with 1 label
+It should be noted that in both clasifiers, if you are willing to rank queries based on their probability of being assigned to sparse retriever, you can set ```num_labels=1``` when training and testing. As a result, for each query, you will get only one probability of success when retrieviing with dense retriever, you can rank them on descending order to rank queeires based on how good they can be retrieve with sparse retriever. 
 
-It should be noted that in both clasifiers, if you are willing to rank queries based on their probability of being assigned to sparse retriever, you can set ```num_labels=1``` when training and testing. As a result, for each query, you will get probability of success when retrieviing with dense retriever, you can rank them on descending order to rank queeires based on how good they can be retrieve with sparse retriever. 
