@@ -2,7 +2,9 @@
 This repository includes codes and data regarding the paper "Predicting efficiency/effectiveness trade-offs for retrieval strategy selection".
 In this work, we propose two classifiers in order to select a suitable retrieval strategy to maintain the trade-off between the cost and utility of  sparse vs. dense vs. hybrid retrievers for individual queries.
 
-In order to train the classifier to decide the appropriate retrieval strategy per query i.e., sparse vs dense vs hybrid. First we need to label the training queries. Since sparse retriever has lower cost ciompared to dense retriever, we set the query class=0 (sparse retriever) if the sparse retriever can retrieve and rank any relevant document among top-T retrieved documents. Otherwise, we prefer the more expensive and complex dense retriever with class label =1. Clone this repository and then [download the Labels for all queries in MSMARCO training set ```train_labels_sparse_vs_dense_T50.tsv```]() when T=50 by  and store it in the same directory as train and test files.
+In order to train the classifier to decide the appropriate retrieval strategy per query i.e., sparse vs dense vs hybrid. First we need to label the training queries. Since sparse retriever has lower cost compared to dense retriever, we set the query class=0 (sparse retriever) if the sparse retriever can retrieve and rank any relevant document among top-T retrieved documents. Otherwise, we prefer the more expensive and complex dense retriever with class label =1.
+
+Clone this repository and then [download the Labels for all queries in MSMARCO training set ```train_labels_sparse_vs_dense_T50.tsv```]() when T=50 by  and store it in the same directory as train and test files.
 
 The labeling file is formatted as follows:
  ```qid<\t>query<\t>first_retrieved_doc_sparse<\t>label```. 
