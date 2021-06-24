@@ -34,7 +34,7 @@ model = CrossEncoder(model_name, num_labels=2)
 model.fit(train_dataloader=train_dataloader,
           epochs=epoch_num,
           warmup_steps=warmup_steps,
-          output_path="models/only_Q_tuned_model_"+model_name+"_e"+str(epoch_num)+'_b'+str(batch_size))
+          output_path="models/sparse_vs_dense_"+model_name+"_e"+str(epoch_num)+'_b'+str(batch_size))
 
 
-model.save("models/sparse_vs_dense_model_"+model_name+"_"+str(epoch_num)+'_b'+str(batch_size))
+model.save("models/sparse_vs_dense_"+model_name+"_"+str(epoch_num)+'_b'+str(batch_size))
